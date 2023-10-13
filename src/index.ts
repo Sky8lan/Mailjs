@@ -1,3 +1,4 @@
+import { SocksProxyAgent } from 'socks-proxy-agent';
 import fetch from "node-fetch";
 import EventSource from "eventsource";
 import type * as type from "./types";
@@ -8,6 +9,7 @@ class Mailjs {
   private baseMercure: string;
   private listener: any;
   private token: string;
+  private proxyAgent: any = null;
   id: string;
   address: string;
 
@@ -215,17 +217,18 @@ class Mailjs {
   }
 
   /** @private */
-  async send_(
-    path: string,
-    method: type.Methods = "GET",
-    body?: object
-  ): type.PromiseResult<any> {
+  setProxy(proxyUrl: string) {
+    this.proxyAgent = new SocksProxyAgent(proxyUrl);
+  }
+
+  async send_(path: string, method: type.Methods = "GET", body?: object): type.PromiseResult<any> {
     const options: type.IRequestObject = {
-      method,
-      headers: {
-        accept: "application/json",
-        authorization: `Bearer ${this.token}`,
-      },
+        method,
+        headers: {
+            accept: "application/json",
+            authorization: `Bearer ${this.token}`,
+        },
+        agent: this.proxyAgent,  // Use the proxy agent here
     };
 
     if (method === "POST" || method === "PATCH") {
