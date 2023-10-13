@@ -129,13 +129,14 @@ export type CreateOneAccountResult = Promise<
  * Request object
  */
 export interface IRequestObject {
-  method: Methods;
-  headers: {
-    accept: string;
-    authorization: string;
-    "content-type"?: string;
-  };
-  body?: string;
+    method: Methods;
+    headers: {
+        accept: string;
+        authorization: string;
+        [key: string]: string;  
+    };
+    body?: string;
+    agent?: any;  
 }
 
 /**
