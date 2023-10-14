@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cemalgnlts/Mailjs.git"
+    "url": "git+https://github.com/sky8lan/Mailjs.git"
   },
   "keywords": [
     "mail",
@@ -30,9 +30,9 @@
   "author": "Cemal",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cemalgnlts/Mailjs/issues"
+    "url": "https://github.com/sky8lan/Mailjs/issues"
   },
-  "homepage": "https://github.com/cemalgnlts/Mailjs#readme",
+  "homepage": "https://github.com/sky8lan/Mailjs#readme",
   "dependencies": {
     "eventsource": "^2.0.2",
     "node-fetch": "^2.6.1"
