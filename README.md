@@ -1,6 +1,6 @@
 # Mailjs
 
-A JavaScript wrapper around the [mail.tm](https://docs.mail.tm/) api.
+A JavaScript wrapper around the [mail.tm](https://docs.mail.tm/) api
 
 Probably one of the best API for creating temporary email accounts.
 
